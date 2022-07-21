@@ -8,7 +8,7 @@ dp = Dispatcher(bot)
 
 
 @dp.message_handler()
-async def answer(message: types.Message):
+async def bot_answer(message: types.Message):
     await message.answer(message.text)
 
 
