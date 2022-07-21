@@ -1,10 +1,20 @@
 import config
 import logging
 from aiogram import Bot, Dispatcher, executor, types
+from aiogram.types import KeyboardButton
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=config.TOKEN)
 dp = Dispatcher(bot)
+
+
+@dp.message_handler(commands="start")
+async def cmd_start():
+    keyboard = types.ReplyKeyboardMarkup()
+    button_1 = types.KeyboardButton(text="Кнопка 1")
+    keyboard.add(button_1)
+    button_2 = types.KeyboardButton(text="Кнопка 2")
+    keyboard.add(button_2)
 
 
 @dp.message_handler()
