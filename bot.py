@@ -8,8 +8,8 @@ bot = Bot(token=config.TOKEN)
 dp = Dispatcher(bot)
 
 
-@dp.message_handler(commands="start")
-async def cmd_start():
+@dp.message_handler
+async def pb():
     keyboard = types.ReplyKeyboardMarkup()
     button_1 = types.KeyboardButton(text="Кнопка 1")
     keyboard.add(button_1)
