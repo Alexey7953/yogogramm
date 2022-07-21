@@ -1,14 +1,14 @@
 import config
 import logging
-from aiogram import Bot, Dispatcher, executor
+from aiogram import Bot, Dispatcher, executor, types
 
-logging.basicConfig(Level=logging.INFO)
+logging.basicConfig(level=logging.INFO)
 bot = Bot(token=config.TOKEN)
 dp = Dispatcher(bot)
 
 
 @dp.message_handler()
-async def echo(message: type.Message):
+async def echo(message: types.Message):
     await message.answer(message.text)
 
 
