@@ -18,7 +18,7 @@ async def push_button(message: types.Message):
     await message.answer("Какую кнопку выберешь ТЫ?", reply_markup=keyboard)
 
 
-# Ответы на кнопки
+# Ответы при нажатии на кнопки
 @dp.message_handler(Text(equals="Кнопка 1"))
 async def with_button_one(message: types.Message):
     await message.reply("Отлично, ты первый!")
