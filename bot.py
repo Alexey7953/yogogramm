@@ -31,10 +31,17 @@ async def with_button_two(message: types.Message):
     await message.reply("Ничего, ты второй")
 
 
-# Дублирование сообщения
+# Сообщения
 @dp.message_handler()
 async def bot_answer(message: types.Message):
-    await message.answer(message.text)
+    # wait message.answer(message.text)
+    if message.text == 'Привет':
+
+        await message.answer('И тебе привет!')
+
+    if message.text == 'Как дела?':
+
+        await message.answer('Нормально, а у Вас?')
 
 
 if __name__ == "__main__":
