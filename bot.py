@@ -20,6 +20,9 @@ async def push_button(message: types.Message):
     await message.answer("Какую кнопку выберешь ТЫ?", reply_markup=keyboard)
 
 
+""" КЛИЕНТСКАЯ ЧАСТЬ"""
+
+
 # Ответы при нажатии на кнопки
 @dp.message_handler(Text(equals="Кнопка 1"))
 async def with_button_one(message: types.Message):
@@ -36,11 +39,9 @@ async def with_button_two(message: types.Message):
 async def bot_answer(message: types.Message):
     # wait message.answer(message.text)
     if message.text == 'Привет':
-
         await message.answer('И тебе привет!')
 
     if message.text == 'Как дела?':
-
         await message.answer('Нормально, а у Вас?')
 
 
